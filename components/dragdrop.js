@@ -54,10 +54,7 @@ function DragDrop() {
     };
     console.log("after")
     reader.readAsDataURL(targetFile);
-  
-
-
-    // setFile(file);
+    setFile(reader.result);
     // previewFile(file);
   };
 
@@ -155,7 +152,7 @@ return (
       ) : (
         <FontAwesomeIcon icon={faCloudUploadAlt} style={style.icon} />
       )}
-      <p>{file ? `File selected: ${file.name}` : 'Choose or drag and drop a picture of your product here'}</p>
+      <p>{file ? `File selected: ${file.name}` : 'Choose or drag and drop a picture of your product here!'}</p>
       <input
         type="file"
         accept="image/*" // Accept only image files

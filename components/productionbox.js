@@ -12,7 +12,7 @@ function ProductionBox() {
   return (
     <div>
       <div className="form-group row">
-        <label htmlFor="colFormLabel" className="col-sm-2 col-form-label">Hours</label>
+        <label htmlFor="colFormLabel" className="col-sm-2 col-form-label">$</label>
         <div className="col-sm-10">
           <input 
             // type="number"
@@ -22,7 +22,6 @@ function ProductionBox() {
             value={inputValue} 
             onChange={handleInputChange}
           />
-          <a>{inputValue}</a>
         </div>
       </div>
     </div>

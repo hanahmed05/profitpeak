@@ -12,6 +12,7 @@ import SignUp from '../../components/signUp';
 import ProductionBox from '../../components/productionbox';
 import UnlockPrice from '../../components/unlockprice';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DragDrop from '../../components/dragdrop';
 //import '../../styles/globals.css';
 
 
@@ -55,7 +56,7 @@ return (
       {`
         body {
           background-color: ##ffffff;
-          font-family: 'Besley', serif;
+          font-family: 'Times New Roman', Times, serif;
         }
       `}
     </style>
@@ -77,16 +78,21 @@ return (
     </div>
     <div className="col d-flex justify-content-center">
       <div className="p-0">
+      <br />
         <div className="m-2">Time Investment:&nbsp;</div>
         <div className="m-2"> <HoursBox /></div>
         <div className="m-2">Production Cost:&nbsp; </div>
         <div className="m-2"> <ProductionBox /> </div>
         <div className="m-2"> <Dropdown /> </div>
-        <UnlockPrice />
+        <div className='m-2'>
+        <UnlockPrice style={{ fontSize: '10px', border: '2px solid #000', padding: '10px' }} />
+        </div>
       </div>
     </div>
 
-    <functionWithButton />
+    {/* const userInput = desiredData + 'It took ' + inputValue + ' hours to make with an hourly rate of $15 and costed $' + inputValue + '. My profit margin is ' + selectedOption + '%. How much should I price this product at?' */}
+
+    {/* <functionWithButton /> */}
     <div style={{ margin: '0', padding: '0' }}>
       <div>
         {uploadsData => (

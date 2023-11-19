@@ -5,7 +5,31 @@ const openai = new OpenAI({
 });
 
 
-export default async function myfunc(req , res) {
+/*
+
+req.query = {
+  url: [image_url],
+  prod_cost: 
+  margin:
+  hours:
+}
+
+*/
+
+export default async function myfunc(req, res) {
+  const image_url = req.query?.url;
+  const prod_cost = req.query?.prod_cost;
+  const margin = req.query?.margin;
+  const hours = req.query?.hours; 
+
+  if (!image_url) {
+    res.status(500).json({
+      error: {
+        message: 'No image provided',
+      },
+    });
+  }
+
   if (!openai.apiKey) {
     res.status(500).json({
       error: {
@@ -26,7 +50,7 @@ export default async function myfunc(req , res) {
             {
               type: "image_url",
               image_url: {
-                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg",
+                "url": image_url,
               },
             },
           ],
@@ -35,7 +59,20 @@ export default async function myfunc(req , res) {
     });
     console.log(response.choices[0]);
 
-    res.status(200).json({ result: response.choices[0]});
+    const description = response.choices[0].message.content;
+
+
+    // 'It took ' + inputValue + ' hours to make with an hourly rate of $15 and costed $' + inputValue + '. My profit margin is ' + selectedOption + '%. How much should I price this product at?'
+
+
+    const answer = responses.choices[0].message.content;
+
+
+    res.send(200).json
+    ({
+      answer,
+    });
+
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: { message: 'An error occurred' } });

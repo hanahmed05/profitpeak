@@ -5,10 +5,13 @@ const UnlockPrice = () => {
   const [showPopup, setShowPopup] = useState(false);
   
   const buttonStyle = {
-    position: 'absolute',
-    top: '135%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    position: 'center',
+    top: '115%',
+    left: '40%',
+    transform: 'translate(30%, 10%)',
+    fontsize: '16px',
+    border: '1px solid #000',
+    padding: '8px',
   };
 
   const togglePopup = () => {
@@ -16,13 +19,15 @@ const UnlockPrice = () => {
   };
 
   return (
-    <div style={shouldDisplayDiv ? { display: 'inline-block' } : { display: 'none' }}>
+    <>
       <div className="unlock-button btn btn-success" style={buttonStyle}>
         <button onClick={togglePopup}>
-          Unlock Your Perfect Price!
+          <h5>Unlock Your Perfect Price!</h5>
         </button>
       </div>
-    </div>
+
+      {showPopup && <SimplePopup />}
+    </>
   );
 };
 

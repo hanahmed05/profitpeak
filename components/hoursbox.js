@@ -12,6 +12,7 @@ function HoursBox() {
   return (
     <div>
       <div className="form-group row">
+      
         <label htmlFor="colFormLabel" className="col-sm-2 col-form-label">Hours</label>
         <div className="col-sm-10">
           <input 
@@ -22,7 +23,7 @@ function HoursBox() {
             value={inputValue} 
             onChange={handleInputChange}
           />
-          <a>{inputValue}</a>
+          
         </div>
       </div>
     </div>
