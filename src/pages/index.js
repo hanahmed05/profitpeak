@@ -5,9 +5,17 @@ import React, { useState, useEffect } from 'react';
 import UploadTile from '../../components/uploadTile';
 import Rectangle from '../../components/rectangle';
 import Divider from '../../components/divider';
-import ImageButton from '../../components/imageButton';
+import PPImage from '../../components/PP.png';
+//import ImageButton from '../../components/imageButton';
 import Dropdown from '../../components/dropdown';
-import Style from '../../components/style';
+import HoursBox from '../../components/hoursbox';
+import SignUp from '../../components/signUp';
+import ProductionBox from '../../components/productionbox';
+import UnlockPrice from '../../components/unlockprice';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DragDrop from '../../components/DragDrop';
+//import '../../styles/globals.css';
+
 
 const uploadData = [
   {
@@ -19,6 +27,15 @@ const uploadData = [
 
 
 export default function Home() {
+
+  const [timeInvestment, setTimeInvestment] = useState('');
+  const [hours, setHours] = useState('');
+  const [productionCost, setProductionCost] = useState('');
+
+  const handleTimeInvestmentChange = (e) => setTimeInvestment(e.target.value);
+  const handleHoursChange = (e) => setHours(e.target.value);
+  const handleProductionCostChange = (e) => setProductionCost(e.target.value);
+  
 
 
 /*{"result":{"message":{"role":"assistant","content":"The image shows a scenic 
@@ -35,16 +52,42 @@ const desiredData = data?.result?.message?.content;
 
 
 return (
-  <div>
-    <div className='pb-8'>
-       <img src="/path/to/your/logo.png" alt="Logo" className="mr-4" />
-      <h1 className='text-3xl text-left'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profit Peak </h1>
+  <div className="m-1">
+    <style jsx global>
+      {`
+        body {
+          background-color: ##ffffff;
+          font-family: 'Besley', serif;
+        }
+      `}
+    </style>
+
+    <div className='pb-8'> 
+      <div className='flex items-center'>
+        <Image src={PPImage} alt="Logo" width={110} height={110} layout="fixed" className="mr-4 border-0" />
+        <h1 className='text-3xl ml-0.2 mt-0.2'>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <SignUp /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </h1>
+      </div>
       <Divider />
     </div>
-    <div>The image shows a scenic natural landscape featuring a wooden boardwalk extending through a lush</div>
-    <div>
-      Fetch data from an API in React
+    <h5> &nbsp;&nbsp;&nbsp;&nbsp;To unlock your product's perfect price, share details below!</h5>
+
+    <div className="App">
+      <DragDrop />
     </div>
+    <div className="col d-flex justify-content-center">
+      <div className="p-0">
+        <div className="m-2">Time Investment:&nbsp;</div>
+        <div className="m-2"> <HoursBox /></div>
+        <div className="m-2">Production Cost:&nbsp; </div>
+        <div className="m-2"> <ProductionBox /> </div>
+        <div className="m-2"> <Dropdown /> </div>
+        <UnlockPrice />
+      </div>
+    </div>
+
     <functionWithButton />
     <div style={{ margin: '0', padding: '0' }}>
       <div>
@@ -52,12 +95,7 @@ return (
           <UploadTile key={uploads.id} name={uploads.name} />
         )}
       </div>
-      <div className="custom-text">
-        Text with Times New Roman font
-        <Dropdown />
-      </div>
-      <App />
     </div>
   </div>
-)
+);
 }

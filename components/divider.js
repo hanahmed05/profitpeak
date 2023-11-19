@@ -5,10 +5,10 @@ const Divider = () => {
       <div
         style={{
 
-          width: '2000px',
-          height: '2px',
-          backgroundColor: 'pink', /* Adjust the color as needed */
-          margin: '20px 0'
+          width: '1408px',
+          height: '4px',
+          backgroundColor: 'green', /* Adjust the color as needed */
+          margin: '15px 0'
         }}
       >
       </div>
