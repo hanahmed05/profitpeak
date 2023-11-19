@@ -1,59 +1,25 @@
+
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React, { useState, useEffect } from 'react';
-import UploadTile from '../../components/UploadTile';
-/*
-export default function Home() {
-  const[Data, setData] = useState('')
+import UploadTile from '../../components/uploadTile';
+import Rectangle from '../../components/rectangle';
+import Divider from '../../components/divider';
+import ImageButton from '../../components/imageButton';
+import Dropdown from '../../components/dropdown';
+import Style from '../../components/style';
 
-  useEffect(() => {
-    const fetchData = async () => {
-        const response = await fetch('/../api/gpt4')
-          .then(response=>response.json())
-          .then(data=>console.log(data));
+const uploadData = [
+  {
+    id: 1,
+    name: 'Upload Pictures Here'
+  }
+];
 
-        const data = await response.json();
-        setData(data);
-    };
 
-    fetchData();
-  }, []);
-
-  return (
-    <div>
-      <div>
-        <div>{JSON.stringify(data)}</div>
-        Fetch data from an API in React
-      </div>
-    </div>
-  );
-}
-*/
 
 export default function Home() {
-  const [data, setData] = useState('');
 
-  /*
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/api/gpt4');
-        
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-        setData(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  */
 
 /*{"result":{"message":{"role":"assistant","content":"The image shows a scenic 
 natural landscape featuring a wooden boardwalk extending through a lush"},
@@ -62,22 +28,36 @@ natural landscape featuring a wooden boardwalk extending through a lush"},
 
 <div>{JSON.stringify(data)}</div> 
 
-const desiredData = data?.result?.message?.content;
-      
-      
+const desiredData = data?.result?.message?.content;  
 */
 
 
 
 
-  return (
-    <div>
-      <div>The image shows a scenic natural landscape
-        featuring a wooden boardwalk extending through a lush</div>
-      <UploadTile />
-      <div>
-        Fetch data from an API in React
-      </div>
+return (
+  <div>
+    <div className='pb-8'>
+       <img src="/path/to/your/logo.png" alt="Logo" className="mr-4" />
+      <h1 className='text-3xl text-left'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profit Peak </h1>
+      <Divider />
     </div>
-  );
+    <div>The image shows a scenic natural landscape featuring a wooden boardwalk extending through a lush</div>
+    <div>
+      Fetch data from an API in React
+    </div>
+    <functionWithButton />
+    <div style={{ margin: '0', padding: '0' }}>
+      <div>
+        {uploadsData => (
+          <UploadTile key={uploads.id} name={uploads.name} />
+        )}
+      </div>
+      <div className="custom-text">
+        Text with Times New Roman font
+        <Dropdown />
+      </div>
+      <App />
+    </div>
+  </div>
+)
 }
