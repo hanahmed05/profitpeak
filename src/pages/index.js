@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React, { useState, useEffect } from 'react';
-import UploadTile from '../../components/uploadTile';
 import Rectangle from '../../components/rectangle';
 import Divider from '../../components/divider';
 import PPImage from '../../components/PP.png';
@@ -13,7 +12,6 @@ import SignUp from '../../components/signUp';
 import ProductionBox from '../../components/productionbox';
 import UnlockPrice from '../../components/unlockprice';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DragDrop from '../../components/DragDrop';
 //import '../../styles/globals.css';
 
 
