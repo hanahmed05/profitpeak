@@ -71,7 +71,7 @@ return (
       </div>
       <Divider />
     </div>
-    <h5> &nbsp;&nbsp;&nbsp;&nbsp;To unlock your product's perfect price, share details below!</h5>
+    <h5 class = "text-center">To unlock your product's perfect price, share details below!</h5>
 
     <div className="App">
       <DragDrop />

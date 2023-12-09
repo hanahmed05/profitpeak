@@ -12,6 +12,7 @@ const UnlockPrice = () => {
     fontsize: '16px',
     border: '1px solid #000',
     padding: '8px',
+    paddingTop: '11px'
   };
 
   const togglePopup = () => {
