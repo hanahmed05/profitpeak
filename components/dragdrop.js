@@ -25,7 +25,7 @@ function DragDrop() {
     e.preventDefault();
     e.stopPropagation();
     if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
-      setDragging(false);
+      setDragging(true);
     }
   }, []);
 
