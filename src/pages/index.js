@@ -55,15 +55,17 @@ return (
     <style jsx global>
       {`
         body {
-          background-color: ##ffffff;
+          background: #008080
           font-family: 'Times New Roman', Times, serif;
+          color: white;
+          
         }
       `}
     </style>
 
     <div className='pb-8'> 
       <div className='flex items-center'>
-        <Image src={PPImage} alt="Logo" width={110} height={110} layout="fixed" className="mr-4 border-0" />
+        <Image src={PPImage} alt="Logo" width={150} height={150} layout="fixed" className="mr-4 border-0" />
         <h1 className='text-3xl ml-0.2 mt-0.2'>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <SignUp /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

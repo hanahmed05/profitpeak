@@ -2,19 +2,24 @@ import React from 'react';
 
 const SignUp = () => {
   const buttonStyle = {
+    padding: '10px',
     position: 'fixed',
-    top: '20px', /* Adjust the top position as needed */
+    top: '40px', /* Adjust the top position as needed */
     right: '20px', /* Adjust the right position as needed */
+    color: 'black', // Changed text color to black for visibility
+    border: 'none',
+    backgroundColor: 'white', // Set background color to white
   };
-
+  
+  
   const buttonHoverStyle = {
-    backgroundColor: 'black', /* Your desired hover background color */
+    backgroundColor:'white', /* Your desired hover background color */
   };
 
   return (
     <div>
       <div className="signup-login-button btn btn-success" style={buttonStyle}>
-        <button style={{ padding: '4px', color: 'white', border: 'none', }} hoverStyle={buttonHoverStyle}>
+        <button style={{ padding: '5px', color: 'teal', border: '10px', }} hoverStyle={buttonHoverStyle}>
           Sign Up / Login
         </button>
       </div>
