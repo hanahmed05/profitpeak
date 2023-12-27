@@ -7,7 +7,7 @@ const Divider = () => {
 
           width: '1908px',
           height: '9px',
-          backgroundColor: '#008080', /* Adjust the color as needed */
+          backgroundColor: '#FFFFFF', /* Adjust the color as needed */
           margin: '15px 0'
         }}
       >

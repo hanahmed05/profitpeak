@@ -19,7 +19,7 @@ const SignUp = () => {
   return (
     <div>
       <div className="signup-login-button btn btn-success" style={buttonStyle}>
-        <button style={{ padding: '5px', color: 'teal', border: '10px', }} hoverStyle={buttonHoverStyle}>
+        <button style={{ padding: '10px', color: 'teal', border: '10px', fontSize: '20px' }} hoverStyle={buttonHoverStyle}>
           Sign Up / Login
         </button>
       </div>

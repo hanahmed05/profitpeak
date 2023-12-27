@@ -13,6 +13,7 @@ import ProductionBox from '../../components/productionbox';
 import UnlockPrice from '../../components/unlockprice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DragDrop from '../../components/dragdrop';
+//import Fonts from '../../components/fonts';
 //import '../../styles/globals.css';
 
 
@@ -55,10 +56,10 @@ return (
     <style jsx global>
       {`
         body {
-          background: #008080
-          font-family: 'Times New Roman', Times, serif;
+          background: #009193;
+          font-family: 'Righteous', sans-serif;;
           color: white;
-          
+          font-weight: 900;
         }
       `}
     </style>
@@ -73,7 +74,10 @@ return (
       </div>
       <Divider />
     </div>
-    <h5 class = "text-center">To unlock your product's perfect price, share details below!</h5>
+    <h2 className="text-center" style={{ fontFamily: 'Righteous, sans-serif' }}>
+      To unlock your product's perfect price, share details below!
+    </h2>
+
 
     <div className="App">
       <DragDrop />
