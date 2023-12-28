@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import React, { useState, useEffect } from 'react';
 import Rectangle from '../../components/rectangle';
 import Divider from '../../components/divider';
-import PPImage from '../../components/PP.png';
+import pplogo2Image from '../../components/pplogo2.png';
 //import ImageButton from '../../components/imageButton';
 import Dropdown from '../../components/dropdown';
 import HoursBox from '../../components/hoursbox';
@@ -66,7 +66,7 @@ return (
 
     <div className='pb-8'> 
       <div className='flex items-center'>
-        <Image src={PPImage} alt="Logo" width={150} height={150} layout="fixed" className="mr-4 border-0" />
+        <Image src={pplogo2Image} alt="Logo" width={125} height={125} layout="fixed" className="mr-4 border-0" />
         <h1 className='text-3xl ml-0.2 mt-0.2'>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <SignUp /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
