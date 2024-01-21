@@ -41,22 +41,19 @@ function DragDrop() {
 
   const handleFileChange = (e) => {
     e.preventDefault();
-    // const file = e.target.files[0];
     let targetFile = e.target.files[0];
-    console.log("chhanging file")
-
+    const file = fileInputRef.current.files?.[0];
+  
     const reader = new FileReader();
     setFile(targetFile);
-
+  
     reader.onload = (event) => {
-      setImagePreviewUrl(event.target.result);
-      console.log("before")
+      setImagePreviewUrl(event.target.result); // Corrected line
     };
-    console.log("after")
+  
     reader.readAsDataURL(targetFile);
-    setFile(reader.result);
-    // previewFile(file);
   };
+  
 
   const handleDrop = useCallback((e) => {
     e.preventDefault();
@@ -150,9 +147,11 @@ return (
       {imagePreviewUrl ? (
         <img src={imagePreviewUrl} alt="Preview" style={{ maxWidth: '100%', maxHeight: '100%' }} />
       ) : (
-        <FontAwesomeIcon icon={faCloudUploadAlt} style={style.icon} />
+        <>
+          <FontAwesomeIcon icon={faCloudUploadAlt} style={style.icon} />
+          <p>Choose or drag and drop a picture of your product here!</p>
+        </>
       )}
-      <p>{file ? `File selected: ${file.name}` : 'Choose or drag and drop a picture of your product here!'}</p>
       <input
         type="file"
         accept="image/*" // Accept only image files
@@ -163,6 +162,7 @@ return (
     </div>
   </div>
 );
+
 }
 
 export default DragDrop;

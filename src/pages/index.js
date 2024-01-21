@@ -56,7 +56,7 @@ return (
     <style jsx global>
       {`
         body {
-          background: #009193;
+          background: black;
           font-family: 'Righteous', sans-serif;;
           color: white;
           font-weight: 900;

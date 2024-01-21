@@ -46,11 +46,23 @@ const SimplePopup = () => {
     });
   };
 
+  const getAnswer = async () => {
+    const res = await fetch("http://localhost:3000/api/gpt4", {
+  method: "POST"
+});
+
+    const data = await res.json();
+    console.log(data)
+  }
+
   return (
     <div style={styles.overlay}>
+          {getAnswer()}
+
       <div className=" d-flex justify-content-center" style={styles.popup}>
         <h3 className=''>Your Perfect Price Is: </h3>
         <h3 className=''>&nbsp; $43.75</h3>
+        
         <button style={styles.closeButton} onClick={clickX}>
           <FontAwesomeIcon icon={faTimes} />
         </button>

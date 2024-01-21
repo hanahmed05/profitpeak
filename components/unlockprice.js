@@ -3,6 +3,7 @@ import SimplePopup from './SimplePopup';
 
 const UnlockPrice = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   
   const buttonStyle = {
     position: 'center',
@@ -13,9 +14,11 @@ const UnlockPrice = () => {
     padding: '8px',
     fontWeight: 'bold',
     paddingTop: '15px',
-    backgroundColor: 'teal', // Set background color to white
-    color: 'white', // Set text color to black or any color you prefer
-    border: '2px solid teal'
+    backgroundColor: 'white', // Set background color to white
+    color: 'teal', // Set text color to black or any color you prefer
+    border: '2px solid teal',
+    boxShadow: isHovered ? '0 0 5px 2px white' : 'none', // Add boxShadow when clicked
+    transition: 'box-shadow 0.3s ease-in-out' // Add a
   };
 
   const togglePopup = () => {

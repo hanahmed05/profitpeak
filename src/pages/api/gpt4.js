@@ -2,44 +2,34 @@ import { OpenAI } from 'openai';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || '',
+  dangerouslyAllowBrowser: true,
 });
 
-
-/*
-
-req.query = {
-  url: [image_url],
-  prod_cost: 
-  margin:
-  hours:
-}
-
-*/
-
 export default async function myfunc(req, res) {
-  const image_url = req.query?.url;
-  const prod_cost = req.query?.prod_cost;
-  const margin = req.query?.margin;
-  const hours = req.query?.hours; 
-
-  if (!image_url) {
-    res.status(500).json({
-      error: {
-        message: 'No image provided',
-      },
-    });
-  }
-
-  if (!openai.apiKey) {
-    res.status(500).json({
-      error: {
-        message: 'OpenAI API key not configured, please follow instructions in README.md',
-      },
-    });
-    return;
-  }
-
   try {
+    if (!req.files || Object.keys(req.files).length === 0) {
+      return res.status(400).json({ error: { message: 'No files were uploaded.' } });
+    }
+
+    const imageFile = req.files.image; // Assuming the file input name is 'image'
+    const image_url = imageFile ? imageFile.path : null;
+
+    if (!image_url) {
+      return res.status(500).json({
+        error: {
+          message: 'No image provided',
+        },
+      });
+    }
+
+    if (!openai.apiKey) {
+      return res.status(500).json({
+        error: {
+          message: 'OpenAI API key not configured, please follow instructions in README.md',
+        },
+      });
+    }
+
     const response = await openai.chat.completions.create({
       model: "gpt-4-vision-preview",
       messages: [
@@ -57,22 +47,12 @@ export default async function myfunc(req, res) {
         },
       ],
     });
-    console.log(response.choices[0]);
 
-    const description = response.choices[0].message.content;
+    const answer = response.choices[0].message.content;
 
-
-    // 'It took ' + inputValue + ' hours to make with an hourly rate of $15 and costed $' + inputValue + '. My profit margin is ' + selectedOption + '%. How much should I price this product at?'
-
-
-    const answer = responses.choices[0].message.content;
-
-
-    res.send(200).json
-    ({
-      answer,
+    res.status(200).json({
+      content: answer,
     });
-
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: { message: 'An error occurred' } });

@@ -13,7 +13,7 @@ const SignUp = () => {
   
   
   const buttonHoverStyle = {
-    backgroundColor:'white', /* Your desired hover background color */
+    backgroundColor:'black', /* Your desired hover background color */
   };
 
   return (
