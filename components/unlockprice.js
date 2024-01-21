@@ -13,8 +13,9 @@ const UnlockPrice = () => {
     padding: '8px',
     fontWeight: 'bold',
     paddingTop: '15px',
-    backgroundColor: 'white', // Set background color to white
-    color: 'teal' // Set text color to black or any color you prefer
+    backgroundColor: 'teal', // Set background color to white
+    color: 'white', // Set text color to black or any color you prefer
+    border: '2px solid teal'
   };
 
   const togglePopup = () => {
