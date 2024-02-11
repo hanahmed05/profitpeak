@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Index from "../src/pages/index"
 import { useCallback, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
